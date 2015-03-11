@@ -1,0 +1,179 @@
+~ann/pd101/screendump2015_0311.txt
+
+dan@pav /home/ann/pd101 $ 
+dan@pav /home/ann/pd101 $ 
+dan@pav /home/ann/pd101 $ ./pd101.bash 
+--2015-03-11 19:13:37--  http://ichart.finance.yahoo.com/table.csv?s=%5EGSPC
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.106, 206.190.61.107
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.106|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘GSPC.csv’
+
+    [  <=>                                  ] 896,365     2.44MB/s   in 0.3s   
+
+2015-03-11 19:13:37 (2.44 MB/s) - ‘GSPC.csv’ saved [896365]
+
+hello, from pd101.py
+GSPC2.csv
+GLD
+--2015-03-11 19:13:40--  http://ichart.finance.yahoo.com/table.csv?s=GLD
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.107, 206.190.61.106
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.107|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘GLD.csv’
+
+    [   <=>                                 ] 134,951      204KB/s   in 0.6s   
+
+2015-03-11 19:13:41 (204 KB/s) - ‘GLD.csv’ saved [134951]
+
+hello, from pd101.py
+GLD2.csv
+TLT
+--2015-03-11 19:13:42--  http://ichart.finance.yahoo.com/table.csv?s=TLT
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.107, 206.190.61.106
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.107|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘TLT.csv’
+
+    [     <=>                               ] 160,192      117KB/s   in 1.3s   
+
+2015-03-11 19:13:43 (117 KB/s) - ‘TLT.csv’ saved [160192]
+
+hello, from pd101.py
+TLT2.csv
+FXI
+--2015-03-11 19:13:45--  http://ichart.finance.yahoo.com/table.csv?s=FXI
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.106, 206.190.61.107
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.106|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘FXI.csv’
+
+    [ <=>                                   ] 131,597     --.-K/s   in 0.07s   
+
+2015-03-11 19:13:45 (1.69 MB/s) - ‘FXI.csv’ saved [131597]
+
+hello, from pd101.py
+FXI2.csv
+EFA
+--2015-03-11 19:13:46--  http://ichart.finance.yahoo.com/table.csv?s=EFA
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.106, 206.190.61.107
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.106|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘EFA.csv’
+
+    [ <=>                                   ] 171,436     --.-K/s   in 0.1s    
+
+2015-03-11 19:13:46 (1.30 MB/s) - ‘EFA.csv’ saved [171436]
+
+hello, from pd101.py
+EFA2.csv
+XOM
+--2015-03-11 19:13:47--  http://ichart.finance.yahoo.com/table.csv?s=XOM
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.106, 206.190.61.107
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.106|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘XOM.csv’
+
+    [  <=>                                  ] 556,576     1.71MB/s   in 0.3s   
+
+2015-03-11 19:13:48 (1.71 MB/s) - ‘XOM.csv’ saved [556576]
+
+hello, from pd101.py
+XOM2.csv
+IWM
+--2015-03-11 19:13:49--  http://ichart.finance.yahoo.com/table.csv?s=IWM
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.106, 206.190.61.107
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.106|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘IWM.csv’
+
+    [ <=>                                   ] 189,211     --.-K/s   in 0.1s    
+
+2015-03-11 19:13:50 (1.89 MB/s) - ‘IWM.csv’ saved [189211]
+
+hello, from pd101.py
+IWM2.csv
+EEM
+--2015-03-11 19:13:51--  http://ichart.finance.yahoo.com/table.csv?s=EEM
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.107, 206.190.61.106
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.107|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘EEM.csv’
+
+    [ <=>                                   ] 153,264     --.-K/s   in 0.1s    
+
+2015-03-11 19:13:51 (1.24 MB/s) - ‘EEM.csv’ saved [153264]
+
+hello, from pd101.py
+EEM2.csv
+MDY
+--2015-03-11 19:13:52--  http://ichart.finance.yahoo.com/table.csv?s=MDY
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.107, 206.190.61.106
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.107|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘MDY.csv’
+
+    [ <=>                                   ] 252,466     1.37MB/s   in 0.2s   
+
+2015-03-11 19:13:53 (1.37 MB/s) - ‘MDY.csv’ saved [252466]
+
+hello, from pd101.py
+MDY2.csv
+EWJ
+--2015-03-11 19:13:54--  http://ichart.finance.yahoo.com/table.csv?s=EWJ
+Resolving ichart.finance.yahoo.com (ichart.finance.yahoo.com)... 206.190.61.107, 206.190.61.106
+Connecting to ichart.finance.yahoo.com (ichart.finance.yahoo.com)|206.190.61.107|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/csv]
+Saving to: ‘EWJ.csv’
+
+    [ <=>                                   ] 224,444     --.-K/s   in 0.1s    
+
+2015-03-11 19:13:54 (1.48 MB/s) - ‘EWJ.csv’ saved [224444]
+
+hello, from pd101.py
+EWJ2.csv
++ cd /home/ann/pd101/
++ sqlite3 pd101.db '.read joinem.sql'
++ python bt10.py
+I have this many observations: 2593
+Busy with prediction calculation: 1
+Busy with prediction calculation: 2
+Busy with prediction calculation: 3
+Busy with prediction calculation: 4
+
+snip ...
+
+Busy with prediction calculation: 1067
+Busy with prediction calculation: 1068
+Busy with prediction calculation: 1069
+Busy with prediction calculation: 1070
+I have saved predictions in data/prdf1.csv now
+I have saved predictions in data/prdf2.csv now
+/home/dan/anaconda3/lib/python3.4/site-packages/pandas/core/frame.py:1706: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  "DataFrame index.", UserWarning)
+Model1 Accuracy: 50.9822263797942
+Model2 Accuracy: 55.56594948550047
+Long-Only Mean-Gain: 0.0526529466791
+Model1 Mean-Gain-Bullish-Predictions: 0.0961904761905
+Model2 Mean-Gain-Bullish-Predictions: 0.0526529466791
+Model1 Mean-Gain-Bearish-Predictions: -0.000569646569647
+Model2 Mean-Gain-Bearish-Predictions: nan
+Prediction-Count: 1069
+Model1 Bullish-Prediction-Count: 588
+Model2 Bullish-Prediction-Count: 1069
+Model1 Bearish-Prediction-Count: 481
+Model2 Bearish-Prediction-Count: 0
+dan@pav /home/ann/pd101 $ 
+dan@pav /home/ann/pd101 $ 
+dan@pav /home/ann/pd101 $ 
+
