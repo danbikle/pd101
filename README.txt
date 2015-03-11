@@ -34,7 +34,7 @@ fi
 
 - Type bash 
 
-- Which python
+- which python
 
 - Get the files for this repo
 
