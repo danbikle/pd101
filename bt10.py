@@ -103,12 +103,12 @@ print('I have saved predictions in data/prdf1.csv now')
 print('I have saved predictions in data/prdf2.csv now')
 
 # I should get some predicates
-posap  = prdf1['actual']     > 0
-negap  = prdf1['actual']     < 0
-pospp1 = prdf1['prediction'] > 0
-pospp2 = prdf2['prediction'] > 0
-negpp1 = prdf1['prediction'] < 0
-negpp2 = prdf2['prediction'] < 0
+posap  = prdf1['actual']     >  0
+negap  = prdf1['actual']     <= 0
+pospp1 = prdf1['prediction'] >  0
+pospp2 = prdf2['prediction'] >  0.5
+negpp1 = prdf1['prediction'] <= 0
+negpp2 = prdf2['prediction'] <= 0.5
 
 # I should apply predicates
 # to get pos or neg predictions:
