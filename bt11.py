@@ -1,11 +1,11 @@
-# ~ann/pd101/bt10.py
+# ~ann/pd101/bt11.py
 
 # This script should help me run backtests on this file:
 # ~ann/pd101/data/wide1.csv
 
 # Demo:
 # cd ~ann/pd101/
-# python bt10.py
+# python bt11.py
 
 import pdb
 import pandas as pd
@@ -46,11 +46,12 @@ pctlead_i = 2
 dow_i     = 3
 dom_i     = 4
 moy_i     = 5
+eem4_i    = 6
 
 # I should use plain integers for the remaining 40 columns.
 
 wide_a = np.array(df1)
-x_a    = wide_a[:,dow_i:]
+x_a    = wide_a[:,eem4_i:  ]
 y_a    = wide_a[:,pctlead_i]
 
 # Ref:
@@ -61,7 +62,7 @@ y_a    = wide_a[:,pctlead_i]
 from sklearn.ensemble  import GradientBoostingRegressor
 from sklearn.neighbors import KNeighborsClassifier
 model1 = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=0, loss='ls')
-model2 = KNeighborsClassifier(n_neighbors=(int(train_count/2)), weights='distance')
+model2 = KNeighborsClassifier(n_neighbors=(int(train_count)), weights='distance')
 
 # I should use a list to save my predictions
 model1_predictions_l = []
@@ -76,7 +77,8 @@ for oos_i in range(0,pcount):
   train_end   = train_start + train_count
   x_train     = x_a[train_start:train_end]
   y_train     = y_a[train_start:train_end]
-  yc_train    = y_train > 0
+  # yc_train  = y_train > 0
+  yc_train    = y_train > np.mean(y_train)
 
   pdate   = wide_a[oos_i,cdate_i]
   model1.fit(x_train, y_train)
@@ -103,12 +105,14 @@ print('I have saved predictions in data/prdf1.csv now')
 print('I have saved predictions in data/prdf2.csv now')
 
 # I should get some predicates
-posap  = prdf1['actual']     >  0
-negap  = prdf1['actual']     <= 0
 pospp1 = prdf1['prediction'] >  0
 pospp2 = prdf2['prediction'] >  0.5
 negpp1 = prdf1['prediction'] <= 0
 negpp2 = prdf2['prediction'] <= 0.5
+posap1 = prdf1['actual']     >  0
+posap2 = prdf2['actual']     >  np.mean(prdf1['actual'])
+negap1 = prdf1['actual']     <= 0
+negap2 = prdf2['actual']     <= np.mean(prdf1['actual'])
 
 # I should apply predicates
 # to get pos or neg predictions:
@@ -118,47 +122,53 @@ prnegDF1 = prdf1[negpp1]
 prnegDF2 = prdf2[negpp2]
 
 # I should get true positives/negatives
-tpDF1 = prposDF1[posap]
-tpDF2 = prposDF2[posap]
-tnDF1 = prnegDF1[negap]
-tnDF2 = prnegDF2[negap]
+tpDF1 = prposDF1[posap1]
+tpDF2 = prposDF2[posap2]
+tnDF1 = prnegDF1[negap1]
+tnDF2 = prnegDF2[negap2]
 
 # I should get accuracy:
 # 100 * (true-pos+true-neg)/total-predictions
 acc1 = 100.0 * (len(tpDF1)+len(tnDF1)) / len(prdf1)
 acc2 = 100.0 * (len(tpDF2)+len(tnDF2)) / len(prdf2)
 
-# I should get effectiveness:
+# I should get effectiveness.
+# For example:
+# np.mean of prdf1 where prdf1['prediction'] < 0
 # np.mean of prdf1 
 # np.mean of prdf1 where prdf1['prediction'] > 0
-# np.mean of prdf1 where prdf1['prediction'] < 0
 
 effneg1 = np.mean(prdf1['actual'][negpp1])
 effneg2 = np.mean(prdf2['actual'][negpp2])
 mean1   = np.mean(prdf1['actual'])
+# mean1 should == mean2
 mean2   = np.mean(prdf2['actual'])
 effpos1 = np.mean(prdf1['actual'][pospp1])
 effpos2 = np.mean(prdf2['actual'][pospp2])
+
+# My model1 is effective if effneg1 < mean1 < effpos1
 
 # I should report:
 print('Model1 Accuracy: '+str(acc1))
 print('Model2 Accuracy: '+str(acc2))
 
 # Effectiveness:
+
+print('Model1 Mean-Gain-Bearish-Predictions: '+str(effneg1))
+print('Model2 Mean-Gain-Below-Avg-Predictions: '+str(effneg2))
+
 print('Long-Only Mean-Gain: '+str(mean1))
 
 print('Model1 Mean-Gain-Bullish-Predictions: '+str(effpos1))
-print('Model2 Mean-Gain-Bullish-Predictions: '+str(effpos2))
-
-print('Model1 Mean-Gain-Bearish-Predictions: '+str(effneg1))
-print('Model2 Mean-Gain-Bearish-Predictions: '+str(effneg2))
+print('Model2 Mean-Gain-Above-Avg-Predictions: '+str(effpos2))
 
 print('Prediction-Count: '+str(len(backtest1_l)))
-print('Model1 Bullish-Prediction-Count: '+str(len(prposDF1)))
-print('Model2 Bullish-Prediction-Count: '+str(len(prposDF2)))
 
 print('Model1 Bearish-Prediction-Count: '+str(len(prnegDF1)))
-print('Model2 Bearish-Prediction-Count: '+str(len(prnegDF2)))
+print('Model2 Below-Avg-Prediction-Count: '+str(len(prnegDF2)))
+
+print('Model1 Bullish-Prediction-Count: '+str(len(prposDF1)))
+print('Model2 Above-Avg-Prediction-Count: '+str(len(prposDF2)))
 
 'bye'
 
