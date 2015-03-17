@@ -21,6 +21,6 @@ cd       /tmp/noon50/
 ~ann/pd101/noon50/wgetem.bash
 
 # I should extract recent prices from html
-python extprice.py
+python ~ann/pd101/noon50/extprice.py
 
 exit
