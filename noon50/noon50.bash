@@ -17,6 +17,9 @@ fi
 mkdir -p /tmp/noon50/
 cd       /tmp/noon50/
 
+# I should get both csv and html data
 ~ann/pd101/noon50/wgetem.bash
+
+# I should extract recent prices from html
 
 exit
