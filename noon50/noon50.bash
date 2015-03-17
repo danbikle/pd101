@@ -23,10 +23,11 @@ echo ~ann/pd101/noon50/wgetem.bash
 # I should extract recent prices from html
 echo python ~ann/pd101/noon50/extprice.py
 
-# I should cat them together
+# I should cat them together and generate features
 for TKR in GLD TLT FXI EFA XOM IWM EEM MDY EWJ GSPC
 do
   cat ${TKR}recent.csv ${TKR}2.csv | grep -v Date > ${TKR}3.csv
+  python ~ann/pd101/noon50/genf.py                  ${TKR}3.csv
 done
 
 exit
