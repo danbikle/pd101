@@ -16,6 +16,10 @@ mydt_s = mydt.strftime('%Y-%m-%d')
 span1 = soup.find(id="yfs_l10_^gspc")
 pdb.set_trace()
 gspc_price = span1.string.replace(',','')
+gspc_s = mydt_s+','+gspc_price+"\n"
+gspcf = open('recent_gspc.csv','w')
+gspcf.write(gspc_s)
+gspcf.close()
 
 
 
