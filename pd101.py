@@ -34,8 +34,6 @@ df1.columns = ['cdate','cp']
 
 df1.head()
 
-import numpy as np
-
 cp_a = df1[['cp']].values
 cp   = [elm[0] for elm in cp_a]
 
