@@ -28,7 +28,7 @@ for TKR in GLD TLT FXI EFA XOM IWM EEM MDY EWJ GSPC
 do
   echo cdate,cp                                   >  ${TKR}3.csv
   cat ${TKR}recent.csv ${TKR}2.csv | grep -v Date >> ${TKR}3.csv
-  echo python ~ann/pd101/noon50/genf.py                   ${TKR}3.csv
+  python ~ann/pd101/noon50/genf.py                   ${TKR}3.csv
 done
 
 exit
