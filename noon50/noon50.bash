@@ -18,9 +18,15 @@ mkdir -p /tmp/noon50/
 cd       /tmp/noon50/
 
 # I should get both csv and html data
-~ann/pd101/noon50/wgetem.bash
+echo ~ann/pd101/noon50/wgetem.bash
 
 # I should extract recent prices from html
-python ~ann/pd101/noon50/extprice.py
+echo python ~ann/pd101/noon50/extprice.py
+
+# I should cat them together
+for TKR in GLD TLT FXI EFA XOM IWM EEM MDY EWJ GSPC
+do
+  cat ${TKR}recent.csv ${TKR}2.csv | grep -v Date > ${TKR}3.csv
+done
 
 exit
