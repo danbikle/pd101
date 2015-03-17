@@ -18,6 +18,6 @@ do
   echo $TKR
   rm -f ${TKR}.html ${TKR}.csv
   wget --output-document=${TKR}.html http://finance.yahoo.com/q?s=$TKR
-  wget --output-document=${TKR}.csv  http://ichart.finance.yahoo.com/table.csv?s=${TKRH}
+  wget --output-document=${TKR}.csv  http://ichart.finance.yahoo.com/table.csv?s=${TKR}
   cat ${TKR}.csv | awk -F, '{print $1 "," $5}' > ${TKR}2.csv
 done
