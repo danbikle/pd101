@@ -24,5 +24,5 @@ gspcf.close()
 
 # I should use a loop on the other tkrs
 for tkr in ['EEM','EFA']:
-  print tkr
+  print(tkr)
 
