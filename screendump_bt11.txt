@@ -1,0 +1,39 @@
+/home/ann/pd101/screendump_bt11.txt
+
+dan@envy /home/ann/pd101 $ 
+dan@envy /home/ann/pd101 $ 
+dan@envy /home/ann/pd101 $ python bt11.py
+I have this many observations: 2595
+Busy with prediction calculation: 1
+Busy with prediction calculation: 2
+Busy with prediction calculation: 3
+Busy with prediction calculation: 4
+Busy with prediction calculation: 5
+Busy with prediction calculation: 6
+Busy with prediction calculation: 7
+Busy with prediction calculation: 8
+snip...
+Busy with prediction calculation: 1065
+Busy with prediction calculation: 1066
+Busy with prediction calculation: 1067
+Busy with prediction calculation: 1068
+Busy with prediction calculation: 1069
+Busy with prediction calculation: 1070
+I have saved predictions in data/prdf1.csv now
+I have saved predictions in data/prdf2.csv now
+/home/dan/anaconda3/lib/python3.4/site-packages/pandas/core/frame.py:1706: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  "DataFrame index.", UserWarning)
+Model1 Accuracy: 48.26941066417212
+Model2 Accuracy: 51.356407857811035
+Model1 Mean-Gain-Bearish-Predictions: 0.0450682302772
+Model2 Mean-Gain-Below-Avg-Predictions: -0.10725
+Long-Only Mean-Gain: 0.0529466791394
+Model1 Mean-Gain-Bullish-Predictions: 0.059105
+Model2 Mean-Gain-Above-Avg-Predictions: 0.0535483568075
+Prediction-Count: 1069
+Model1 Bearish-Prediction-Count: 469
+Model2 Below-Avg-Prediction-Count: 4
+Model1 Bullish-Prediction-Count: 600
+Model2 Above-Avg-Prediction-Count: 1065
+dan@envy /home/ann/pd101 $ 
+dan@envy /home/ann/pd101 $ 

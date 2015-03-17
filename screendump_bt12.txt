@@ -1,0 +1,90 @@
+/home/ann/pd101/screendump_bt12.txt
+
+dan@envy /home/ann/pd101 $ python bt12.py
+I have this many observations: 2595
+Busy with prediction calculation: 1
+Busy with prediction calculation: 2
+Busy with prediction calculation: 3
+Busy with prediction calculation: 4
+Busy with prediction calculation: 5
+Busy with prediction calculation: 6
+Busy with prediction calculation: 7
+snip...
+Busy with prediction calculation: 1065
+Busy with prediction calculation: 1066
+Busy with prediction calculation: 1067
+Busy with prediction calculation: 1068
+Busy with prediction calculation: 1069
+Busy with prediction calculation: 1070
+I have saved predictions in data/prdf1.csv now
+I have saved predictions in data/prdf2.csv now
+/home/dan/anaconda3/lib/python3.4/site-packages/pandas/core/frame.py:1706: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  "DataFrame index.", UserWarning)
+Model1 Accuracy: 50.88868101028999
+Model2 Accuracy: 51.16931711880262
+Model1 Mean-Gain-Bearish-Predictions: 0.00125155925156
+Model2 Mean-Gain-Below-Avg-Predictions: -0.014
+Long-Only Mean-Gain: 0.0529466791394
+Model1 Mean-Gain-Bullish-Predictions: 0.0952346938776
+Model2 Mean-Gain-Above-Avg-Predictions: 0.0530721649485
+Prediction-Count: 1069
+Model1 Bearish-Prediction-Count: 481
+Model2 Below-Avg-Prediction-Count: 2
+Model1 Bullish-Prediction-Count: 588
+Model2 Above-Avg-Prediction-Count: 1067
+dan@envy /home/ann/pd101 $ 
+dan@envy /home/ann/pd101 $ 
+dan@envy /home/ann/pd101 $ 
+
+
+dan@envy /home/ann/pd101 $ 
+dan@envy /home/ann/pd101 $ python
+Python 3.4.1 |Anaconda 2.1.0 (64-bit)| (default, Sep 10 2014, 17:10:18) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 1070.0 * 0.053
+56.71
+>>> 
+>>> 
+
+The long-only gain for the past 1070 trading days was 56.7%
+
+What about model1?
+
+>>> 
+>>> 588.0 * 0.095
+55.86
+>>> 
+>>> 
+
+The gain for following 588 model1 bullish predictions was 55.9%
+
+So, the 588 model1 bullish predictions were effective.
+
+But if I had followed the 481 model1 bearish predictions,
+I would have lost this much:
+
+
+>>> 
+>>> 481.0 * 0.00125
+0.6012500000000001
+>>> 
+>>> 
+
+A total loss of 0.6% from 481 predictions would not be too painful.
+
+Model2 issued almost 100% bullish predictions so it nearly matches long-only:
+
+>>> 
+>>> 1067.0 * 0.0503
+53.6701
+>>> 
+>>> 
+
+Although The 2 bearish predictions were accurate, they were not significant:
+>>> 
+>>> 2.0 * 0.014
+0.028
+>>> 
+>>> 
