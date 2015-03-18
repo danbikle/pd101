@@ -31,10 +31,9 @@ do
   python ~ann/pd101/noon50/genf.py                   ${TKR}3.csv
   grep -v cdate ftr${TKR}3.csv > ${TKR}4.csv
 done
-exit
 
 # I should create wide1.csv
-sqlite3 noon50.db '.read ~ann/pd101/noon50/joinem.sql'
+sqlite3 noon50.db '.read /home/ann/pd101/noon50/joinem.sql'
 
 # I should predict
 python ~ann/pd101/noon50/noon50.py
