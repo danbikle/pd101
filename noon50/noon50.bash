@@ -18,10 +18,10 @@ mkdir -p /tmp/noon50/
 cd       /tmp/noon50/
 
 # I should get both csv and html data
-echo ~ann/pd101/noon50/wgetem.bash
+~ann/pd101/noon50/wgetem.bash
 
 # I should extract recent prices from html
-echo python ~ann/pd101/noon50/extprice.py
+python ~ann/pd101/noon50/extprice.py
 
 # I should cat them together and generate features
 for TKR in GLD TLT FXI EFA XOM IWM EEM MDY EWJ GSPC
