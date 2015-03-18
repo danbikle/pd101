@@ -36,4 +36,13 @@ exit
 # I should create wide1.csv
 sqlite3 noon50.db '.read ~ann/pd101/noon50/joinem.sql'
 
+# I should predict
+python ~ann/pd101/noon50/noon50.py
+
+echo Recent GBRT predictions:
+head /tmp/noon50/prdf1.csv
+
+echo Recent KNN predictions:
+head /tmp/noon50/prdf2.csv
+
 exit

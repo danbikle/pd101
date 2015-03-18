@@ -4,7 +4,7 @@
 
 -- Demo:
 -- cd /tmp/noon50/
--- sqlite3 noon50.db '.read ~ann/pd101/noon50/joinem.sql'
+-- sqlite3 noon50.db '.read /home/ann/pd101/noon50/joinem.sql'
 
 --  This script should inner-join some csv files on cdate.
 
