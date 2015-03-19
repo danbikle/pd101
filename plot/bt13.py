@@ -93,3 +93,20 @@ for oos_i in range(0,pcount):
   model1_predictions_l.append([pdate, m1p,     pctlead])
   model2_predictions_l.append([pdate, m2p,     pctlead])
   model2_plot_data_l.append(  [pdate, m2p-0.5, pctlead])
+
+prdf1 = pd.DataFrame(model1_predictions_l)
+prdf2 = pd.DataFrame(model2_predictions_l)
+prdf3 = pd.DataFrame(model2_plot_data_l  )
+
+for df in [prdf1,prdf2,prdf3]:
+  df.columns = ['cdate','cp','prediction','actual']
+
+# I should save my work
+prdf1.to_csv('prdf1.csv', float_format='%4.3f', index=False)
+prdf2.to_csv('prdf2.csv', float_format='%4.3f', index=False)
+prdf3.to_csv('prdf3.csv', float_format='%4.3f', index=False)
+print('I have saved predictions in prdf1.csv')
+print('I have saved predictions in prdf2.csv')
+print('I have saved predictions in prdf3.csv')
+'bye'
+
