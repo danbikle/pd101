@@ -13,3 +13,8 @@ echo /home/ann/pd101/plot/wgetem.bash
 set -x
 # I should create wide1.csv
 sqlite3 pd101.db '.read /home/ann/pd101/plot/joinem.sql'
+
+# I should backtest:
+python /home/ann/pd101/plot/bt13.py
+
+exit
