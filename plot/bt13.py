@@ -20,7 +20,6 @@ print('I have this many observations: '+str(obs_count))
 
 # I should get this many predictions:
 pcount = 1070 # Near the max
-pcount = 20
 
 # I should learn from this many observations:
 train_count = 252 * 6
