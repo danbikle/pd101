@@ -16,7 +16,7 @@ echo sqlite3 pd101.db '.read /home/ann/pd101/plot/joinem.sql'
 
 # I should backtest:
 python /home/ann/pd101/plot/bt13.py
-
+exit
 # I should plotem:
 /home/ann/pd101/plot/plotem.bash prdf1.csv
 /home/ann/pd101/plot/plotem.bash prdf3.csv

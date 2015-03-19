@@ -17,6 +17,6 @@ fi
 
 echo Working...
 
-python /home/ann/pd101/plotem.py $1
+python /home/ann/pd101/plot/plotem.py $1
 
 exit
