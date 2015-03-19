@@ -54,16 +54,18 @@ y_a    = wide_a[:,pctlead_i]
 
 # Ref:
 # http://scikit-learn.org/stable/modules/ensemble.html#regression
-# http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
+# http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
 
 from sklearn.ensemble  import GradientBoostingRegressor
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn import linear_model
+
 model1 = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=0, loss='ls')
-model2 = KNeighborsClassifier(n_neighbors=(int(train_count)), weights='distance')
+model2 = linear_model.LogisticRegression()
 
 # I should use a list to save my predictions
 model1_predictions_l = []
 model2_predictions_l = []
+model2_plot_data_l   = []
 
 # I should build a loop from pcount
 # Higher dofit means fewer models means faster loop:
@@ -86,7 +88,8 @@ for oos_i in range(0,pcount):
     model1.fit(x_train, y_train)
     model2.fit(x_train, yc_train)
   m1p     = model1.predict(x_oos)[0]
-  m2p     = model2.predict_proba(x_oos)[0,1]
+  m2p     = model2.predict_proba(x_oos.astype(float))[0,1]
   pctlead = wide_a[oos_i,pctlead_i]
-  model1_predictions_l.append([pdate, m1p, pctlead])
-  model2_predictions_l.append([pdate, m2p, pctlead])
+  model1_predictions_l.append([pdate, m1p,     pctlead])
+  model2_predictions_l.append([pdate, m2p,     pctlead])
+  model2_plot_data_l.append(  [pdate, m2p-0.5, pctlead])
