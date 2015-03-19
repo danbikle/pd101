@@ -28,9 +28,6 @@ train_count = 252 * 6
 if pcount + train_count > obs_count:
   print('You need to lower pcount and-or train_count.')
   sys.exit()
-  
-# I should have this number of days between training data and oos data:
-train_oos_gap = 0
 
 # I should get some training data from df1.
 # I should put it in NumPy Arrays.
@@ -69,6 +66,11 @@ model1_predictions_l = []
 model2_predictions_l = []
 
 # I should build a loop from pcount
+# Higher dofit means fewer models means faster loop:
+dofit = 10
+# I should have this number of days between training data and oos data:
+train_oos_gap = dofit # train_oos_gap should <= dofit
+# Larger train_oos_gap means less precision.
 
 for oos_i in range(0,pcount):
   print('Busy with prediction calculation: '+str(oos_i+1))
@@ -79,10 +81,10 @@ for oos_i in range(0,pcount):
   y_train     = y_a[train_start:train_end]
   # yc_train  = y_train > 0
   yc_train    = y_train > np.mean(y_train)
-
-  pdate   = wide_a[oos_i,cdate_i]
-  model1.fit(x_train, y_train)
-  model2.fit(x_train, yc_train)
+  pdate       = wide_a[oos_i,cdate_i]
+  if oos_i % dofit == 0:
+    model1.fit(x_train, y_train)
+    model2.fit(x_train, yc_train)
   m1p     = model1.predict(x_oos)[0]
   m2p     = model2.predict_proba(x_oos)[0,1]
   pctlead = wide_a[oos_i,pctlead_i]
